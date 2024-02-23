@@ -3,6 +3,10 @@
   Below, you can see an example of a class called "menu" that changes the color of the text to blue. Modify according to your needs.
 */
 
+#main-row {
+  padding-bottom: 90px;
+}
+
 #brand-row {
   max-height: 60px;
   margin-top: 50px;
@@ -110,7 +114,7 @@
 #footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   padding: 15px;
   background-color: white;
   border-color: lightgray;
@@ -125,6 +129,51 @@
 
 .footer-button {
   margin-left: 15px;
+  padding-inline: 15px;
+  border-width: 1px;
+  border-radius: 12px;
+  box-shadow: 0px 1px 2px 0px gray;
+  font-size: x-small;
+  font-weight: 500;
+  line-height: 125%;
+  background-color: transparent;
+  color: black !important;
+}
+
+#pop-up-row {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.3);
+}
+
+#pop-up-content {
+  width: 60vw;
+  padding: 15px;
+  border-width: 1px;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: black;
+  box-shadow: 0px 1px 2px 0px gray;
+  background-color: white;
+}
+
+#pop-up-title {
+  font-size: small;
+  font-weight: 500;
+}
+
+#pop-up-details {
+  margin-bottom: 15px;
+  font-size: x-small;
+  font-weight: light;
+  line-height: 115%;
+  color: gray;
+  white-space: pre
+}
+
+.pop-up-button {
   padding-inline: 15px;
   border-width: 1px;
   border-radius: 12px;
