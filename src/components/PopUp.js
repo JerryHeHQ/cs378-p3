@@ -22,7 +22,7 @@ const PopUp = ({show, switchPopUpVisibilityFunc, title, details}) => {
           </div>
           <div className='col d-flex justify-content-end'>
             <button className='pop-up-button' type='button' onClick={() => {switchPopUpVisibilityFunc()}}>
-              Confirm
+              OK
             </button>
           </div>
         </div>
