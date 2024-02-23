@@ -3,6 +3,7 @@ import MenuItem from './components/MenuItem';
 import BrandSection from './components/BrandSection';
 import MottoSection from './components/MottoSection';
 import Footer from './components/Footer';
+import React, { useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
@@ -91,8 +92,33 @@ const brandMottos = {
   motto2: 'Every Byte is a Delight!',
 }
 
-
 function App() {
+  const [itemCounts, setItemCounts] = useState(() => {
+    return Array(menuItems.length).fill(0)
+  })
+
+  function getItemCount(id) {
+    return itemCounts[id - 1]
+  }
+
+  function incrementItemCount(id, increment) {
+    const newItemCounts = [...itemCounts]
+    newItemCounts[id - 1] = Math.max(0, itemCounts[id - 1] + increment)
+    setItemCounts(newItemCounts)
+  }
+
+  function getSubtotal() {
+    var subtotal = 0
+    itemCounts.map((itemCount, index) => {
+      subtotal += itemCount * menuItems[index].price
+    })
+    return subtotal
+  }
+
+  function clearItemCounts() {
+    setItemCounts(Array(menuItems.length).fill(0))
+  }
+
   return (
     <div className='container'>
       <div className='row'>
@@ -105,7 +131,11 @@ function App() {
           <div className='row' id='items-row'>
             <div className='col'>
               {menuItems.map((menuItem) => (
-                <MenuItem object = {menuItem}/>
+                <MenuItem 
+                  menuItemData = {menuItem}
+                  getItemCountFunc = {getItemCount}
+                  incrementItemCountFunc = {incrementItemCount}
+                />
               ))}
             </div>
           </div>
@@ -113,7 +143,10 @@ function App() {
         </div>
       </div>
 
-      <Footer />
+      <Footer
+        getSubtotalFunc = {getSubtotal}
+        clearItemCountsFunc = {clearItemCounts}
+      />
 
     </div>
   );

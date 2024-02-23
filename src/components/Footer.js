@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({getSubtotalFunc, clearItemCountsFunc}) => {
   return (
     <div className='row d-flex align-items-center' id='footer'>
       <div className='col-auto' id='subtotal-col'>
-        Subtotal $0
+        Subtotal ${getSubtotalFunc()}
       </div>
       <div className='col d-flex justify-content-end'>
         <button className='footer-button' type='button'>
           Order
         </button>
-        <button className='footer-button' type='button'>
+        <button className='footer-button' type='button' onClick={() => {clearItemCountsFunc()}}>
           Clear All
         </button>
       </div>
