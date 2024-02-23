@@ -26,9 +26,15 @@ const MenuItem = ({ object }) => {
           <div className='col item-price-col'>
             {"$" + object.price}
           </div>
-          <div className='col d-flex justify-content-end item-add-col'>
-            <button className='item-add-button' type='button'>
-              Add
+          <div className='col d-flex justify-content-end align-items-center item-add-col'>
+            <button className='item-count-button' type='button'>
+              −
+            </button>
+            <div className='item-count'>
+              0
+            </div>
+            <button className='item-count-button' type='button'>
+              +
             </button>
           </div>
         </div>

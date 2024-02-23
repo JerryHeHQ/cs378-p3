@@ -83,13 +83,26 @@
   font-weight: 500;
 }
 
-.item-add-button {
-  padding-inline: 15px;
-  border: 0px;
-  border-radius: 12px;
-  box-shadow: 0px 1px 2px 0px gray;
+.item-count-button {
+  height: 15px;
+  width: 15px;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: black;
   font-size: x-small;
   font-weight: 500;
-  line-height: 100%;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black !important;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-count {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: x-small;
+  font-weight: 400;
   color: black !important;
 }
